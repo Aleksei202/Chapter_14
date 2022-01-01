@@ -1,16 +1,16 @@
-
+#info- fixed file from 14.1
 
 Feature: Forgotten password functionality
   Background:
-    Given User launch Forgotten password page
-    And User is not logged in
+    Given forgotten password page is launched
 
-  Scenario: a user requests login email using existing account email
+
+  Scenario: a user requests email for recovery login using existing account email
     When user enters account email
-    And User clicks Continue button
-    Then Info pops up 'An email with a confirmation link has been sent your email address.'
+    And user clicks 'continue' button
+    Then info pops up about success email
 
   Scenario: a user requests login email using not existing account email
     When user enters account email
-    And User clicks Continue button
-    Then Info pops up 'Warning: The E-Mail Address was not found in our records, please try again!'
+    And user clicks 'continue' button
+    Then user gets info that email is not registered
